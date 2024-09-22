@@ -13,19 +13,19 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-// import GoogleTextInput from "@/components/GoogleTextInput";
+import GoogleTextInput from "@/components/GoogleTextInput";
 // import Map from "@/components/Map";
 import RideCard from "@/components/RideCard";
 import { icons, images } from "@/constants";
 import { useFetch } from "@/lib/fetch";
-// import { useLocationStore } from "@/store";
+import { useLocationStore } from "@/store";
 import { Ride } from "@/types/type";
 
 const Home = () => {
   const { user } = useUser();
   const { signOut } = useAuth();
 
-  // const { setUserLocation, setDestinationLocation } = useLocationStore();
+  const { setUserLocation, setDestinationLocation } = useLocationStore();
 
   const handleSignOut = () => {
     signOut();
@@ -63,15 +63,15 @@ const Home = () => {
   //   })();
   // }, []);
 
-  // const handleDestinationPress = (location: {
-  //   latitude: number;
-  //   longitude: number;
-  //   address: string;
-  // }) => {
-  //   setDestinationLocation(location);
+  const handleDestinationPress = (location: {
+    latitude: number;
+    longitude: number;
+    address: string;
+  }) => {
+    setDestinationLocation(location);
 
-  //   router.push("/(root)/find-ride");
-  // };
+    // router.push("/(root)/find-ride");
+  };
 
   return (
     <SafeAreaView className="bg-general-500">
@@ -115,11 +115,11 @@ const Home = () => {
               </TouchableOpacity>
             </View>
 
-            {/* <GoogleTextInput
+            <GoogleTextInput
               icon={icons.search}
               containerStyle="bg-white shadow-md shadow-neutral-300"
               handlePress={handleDestinationPress}
-            /> */}
+            />
 
             <>
               <Text className="text-xl font-JakartaBold mt-5 mb-3">
