@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 
 import CustomButton from "@/components/CustomButton";
 import GoogleTextInput from "@/components/GoogleTextInput";
-// import RideLayout from "@/components/RideLayout";
+import RideLayout from "@/components/RideLayout";
 import { icons } from "@/constants";
 import { useLocationStore } from "@/store";
 
@@ -19,7 +19,6 @@ const FindRide = () => {
     <RideLayout title="Ride">
       <View className="my-3">
         <Text className="text-lg font-JakartaSemiBold mb-3">From</Text>
-
         <GoogleTextInput
           icon={icons.target}
           initialLocation={userAddress!}
@@ -31,7 +30,6 @@ const FindRide = () => {
 
       <View className="my-3">
         <Text className="text-lg font-JakartaSemiBold mb-3">To</Text>
-
         <GoogleTextInput
           icon={icons.map}
           initialLocation={destinationAddress!}
@@ -43,7 +41,7 @@ const FindRide = () => {
 
       <CustomButton
         title="Find Now"
-        // onPress={() => router.push(`/(root)/confirm-ride`)}
+        onPress={() => router.push(`/(root)/confirm-ride`)}
         className="mt-5"
       />
     </RideLayout>

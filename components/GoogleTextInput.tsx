@@ -1,5 +1,7 @@
 import { View, Image } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import 'react-native-get-random-values';
+
 
 import { icons } from "@/constants";
 import { GoogleInputProps } from "@/types/type";
@@ -12,7 +14,7 @@ const GoogleTextInput = ({
     containerStyle,
     textInputBackgroundColor,
     handlePress,
-}: GoogleInputProps) => {
+}: GoogleInputProps) => { 
     return (
         <View
             className={`flex flex-row items-center justify-center relative z-50 rounded-xl ${containerStyle}`}
